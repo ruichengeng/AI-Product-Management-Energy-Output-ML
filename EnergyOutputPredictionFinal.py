@@ -21,8 +21,10 @@ print (X_EnergyDataFile)
 print ("Log: Observation or target to be predicted")
 print (Y_EnergyDataFile)
 
-X_train, X_test = train_test_split(X_EnergyDataFile, test_size= 0.15, shuffle=False)
-Y_train, Y_test = train_test_split(Y_EnergyDataFile, test_size= 0.15, shuffle=False)
+TestDataPerc = float(input("Please specify the portion of data to be test data: "))
+
+X_train, X_test = train_test_split(X_EnergyDataFile, test_size= TestDataPerc, shuffle=False)
+Y_train, Y_test = train_test_split(Y_EnergyDataFile, test_size= TestDataPerc, shuffle=False)
 
 print ("Log: X/variables for training")
 print (X_train)
