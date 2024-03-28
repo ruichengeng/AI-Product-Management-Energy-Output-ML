@@ -76,27 +76,27 @@ while FoldCount > 0:
         kf_score_r2 = cross_val_score(lr, X_train, Y_train, scoring = 'r2', cv=FoldCount)
         print("Log: R2 (Coefficient of Determination)")
         print (kf_score_r2)
-        print ("Log: Average R2 Score: ", np.mean(kf_score_r2))
+        print ("Log: Magnitude of Average R2 Score: ", abs(np.mean(kf_score_r2)))
 
         kf_score_e_variance = cross_val_score(lr, X_train, Y_train, scoring = 'explained_variance', cv=FoldCount)
         print("Log: Explained Variance")
         print (kf_score_e_variance)
-        print ("Log: Average EV Score: ", np.mean(kf_score_e_variance))
+        print ("Log: Magnitude of Average EV Score: ", abs(np.mean(kf_score_e_variance)))
 
         kf_score_MSE = cross_val_score(lr, X_train, Y_train, scoring = 'neg_mean_squared_error', cv=FoldCount)
-        print("Log: Mean Squared Error (MSE)")
+        print("Log: Negative Mean Squared Error (MSE)")
         print (kf_score_MSE)
-        print ("Log: Average MSE: ", np.mean(kf_score_MSE))
+        print ("Log: Magnitude of Average MSE: ", abs(np.mean(kf_score_MSE)))
 
         kf_score_MAE = cross_val_score(lr, X_train, Y_train, scoring = 'neg_mean_absolute_error', cv=FoldCount)
-        print("Log: Mean Absolute Error (MAE)")
+        print("Log: Negative Mean Absolute Error (MAE)")
         print (kf_score_MAE)
-        print ("Log: Average MAE: ", np.mean(kf_score_MAE))
+        print ("Log: Magnitude of Average MAE: ", abs(np.mean(kf_score_MAE)))
 
         kf_score_RMSE = cross_val_score(lr, X_train, Y_train, scoring = 'neg_root_mean_squared_error', cv=FoldCount)
-        print("Log: Root Mean Squared Error (RMSE)")
+        print("Log: Negative Root Mean Squared Error (RMSE)")
         print (kf_score_RMSE)
-        print ("Log: Average RMSE: ", np.mean(kf_score_RMSE))
+        print ("Log: Magnitude of Average RMSE: ", abs(np.mean(kf_score_RMSE)))
 
         FoldCount = int(input("K fold count: "))
 
